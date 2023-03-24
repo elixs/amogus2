@@ -11,12 +11,12 @@ const GRAVITY = 150
 @onready var playback = animation_tree.get("parameters/playback")
 @onready var pivot = $Pivot
 
+
 func _ready():
 	animation_tree.active = true
 
 func _physics_process(delta):
 	if not is_on_floor():
-		velocity
 		velocity.y += GRAVITY * delta
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
