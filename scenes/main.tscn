@@ -8,6 +8,12 @@ size = Vector2(32, 32)
 
 [node name="Main" type="Node2D"]
 
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(127, 54)
+scale = Vector2(2.82031, 2.82031)
+texture = ExtResource("2_xaq8e")
+metadata/_edit_lock_ = true
+
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(127, 122)
 scale = Vector2(9.44, 1)
@@ -45,4 +51,4 @@ texture = ExtResource("2_xaq8e")
 shape = SubResource("RectangleShape2D_4hhnu")
 
 [node name="Player" parent="." instance=ExtResource("2_k8b1r")]
-position = Vector2(79.0887, 96.7198)
+position = Vector2(111, 2)
