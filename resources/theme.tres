@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b03xfivox70s5"]
+
+[ext_resource type="FontFile" uid="uid://dawdogq2ttft0" path="res://assets/NeonSans_Font_080/NeonSans.otf" id="1_pkd6e"]
+
+[resource]
+default_font = ExtResource("1_pkd6e")
+default_font_size = 12
+BigLabel/base_type = &"Label"
+BigLabel/font_sizes/font_size = 20
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 8
