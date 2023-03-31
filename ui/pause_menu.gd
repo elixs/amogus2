@@ -12,6 +12,7 @@ func _ready():
 	hide()
 
 func _input(event):
+	print(event)
 	if event.is_action_pressed("pause"):
 		visible = !visible
 		get_tree().paused = visible

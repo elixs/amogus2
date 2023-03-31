@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce26ywrffyybe"]
+
+[ext_resource type="PackedScene" uid="uid://do4rgljseuroc" path="res://scenes/main.tscn" id="1_rpswh"]
+
+[node name="ViewportTest" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/HBoxContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(126, 144)
+render_target_update_mode = 4
+
+[node name="Main" parent="CanvasLayer/HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_rpswh")]
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/HBoxContainer/SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(126, 144)
+render_target_update_mode = 4
+
+[node name="Main" parent="CanvasLayer/HBoxContainer/SubViewportContainer2/SubViewport" instance=ExtResource("1_rpswh")]

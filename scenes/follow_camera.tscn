@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://qcr0020fw67i"]
+
+[ext_resource type="Script" path="res://scenes/follow_camera.gd" id="1_hyus5"]
+
+[node name="FollowCamera" type="Camera2D"]
+process_callback = 0
+script = ExtResource("1_hyus5")
