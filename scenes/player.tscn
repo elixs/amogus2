@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bwnwi"]
 radius = 2.0
-height = 20.0
+height = 16.0
 
 [sub_resource type="Animation" id="Animation_cnhch"]
 length = 0.001
@@ -478,6 +478,7 @@ parameters/playback = SubResource("AnimationNodeStateMachinePlayback_xfeok")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_qiyis")]
+visible = false
 
 [node name="Camera" type="Camera2D" parent="."]
 enabled = false
