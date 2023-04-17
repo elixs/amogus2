@@ -1,0 +1,36 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://d3dtyik2vgqhl"]
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_te5bi"]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_ix4ay"]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_73q1k"]
+resource_name = "LowPassFilter"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_un37o"]
+resource_name = "Reverb"
+
+[resource]
+bus/0/volume_db = -0.0282841
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -0.0282841
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectPhaser_te5bi")
+bus/1/effect/0/enabled = true
+bus/2/name = &"SFX"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectPhaser_ix4ay")
+bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectLowPassFilter_73q1k")
+bus/2/effect/1/enabled = true
+bus/2/effect/2/effect = SubResource("AudioEffectReverb_un37o")
+bus/2/effect/2/enabled = true

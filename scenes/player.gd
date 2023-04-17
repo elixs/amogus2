@@ -16,9 +16,14 @@ var Enemy = preload("res://scenes/enemy.tscn")
 @onready var camera = $Camera
 @onready var camera_zoom = $CameraZoom
 
+@onready var audio_stream_player = $AudioStreamPlayer
+@onready var area_2d = $Pivot/Area2D
+
+
 func _ready():
 	animation_tree.active = true
-#	camera.enabled = true
+	camera.enabled = true
+	area_2d.body_entered.connect(_on_body_entered)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -27,6 +32,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		Game.jumps += 1
+		audio_stream_player.play()
 	
 	var move_input = Input.get_axis("move_left", "move_right")
 	
@@ -36,6 +42,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("spawn"):
 		_spawn()
+	
+	if Input.is_action_just_pressed("attack"):
+		_attack()
 	
 	# animation
 	
@@ -64,3 +73,15 @@ func _spawn():
 	var enemy = Enemy.instantiate()
 	get_parent().add_child(enemy)
 	enemy.global_position = get_global_mouse_position()
+
+
+func _attack():
+	playback.call_deferred("travel", "attack")
+
+
+func _on_body_entered(body: Node):
+	if body.has_method("take_damage"):
+		body.take_damage()
+	if body is CharacterBody2D:
+		var character = body as CharacterBody2D
+		character.velocity = (character.global_position - global_position).normalized() * 300

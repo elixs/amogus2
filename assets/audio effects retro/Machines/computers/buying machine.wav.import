@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cl7r4vf0ehj3f"
+path="res://.godot/imported/buying machine.wav-72cb08e2e0e14b6ca85be37df7d5d170.sample"
+
+[deps]
+
+source_file="res://assets/audio effects retro/Machines/computers/buying machine.wav"
+dest_files=["res://.godot/imported/buying machine.wav-72cb08e2e0e14b6ca85be37df7d5d170.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

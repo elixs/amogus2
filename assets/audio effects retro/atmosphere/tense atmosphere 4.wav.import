@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cp7vjxmdoo5yj"
+path="res://.godot/imported/tense atmosphere 4.wav-85ffa45fe95b9d43aab19483ccd63bbe.sample"
+
+[deps]
+
+source_file="res://assets/audio effects retro/atmosphere/tense atmosphere 4.wav"
+dest_files=["res://.godot/imported/tense atmosphere 4.wav-85ffa45fe95b9d43aab19483ccd63bbe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

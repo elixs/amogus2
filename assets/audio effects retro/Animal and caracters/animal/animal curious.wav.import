@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chhhsksq7mgf5"
+path="res://.godot/imported/animal curious.wav-8e91b25beb21d5faed38610dc58296fb.sample"
+
+[deps]
+
+source_file="res://assets/audio effects retro/Animal and caracters/animal/animal curious.wav"
+dest_files=["res://.godot/imported/animal curious.wav-8e91b25beb21d5faed38610dc58296fb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

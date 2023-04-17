@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckk0ssytyg1x4"
+path="res://.godot/imported/embarrassed.wav-2bbdd88b415c233f64aadf93188a17b2.sample"
+
+[deps]
+
+source_file="res://assets/audio effects retro/Animal and caracters/characters/actions and reactions interactions/embarrassed.wav"
+dest_files=["res://.godot/imported/embarrassed.wav-2bbdd88b415c233f64aadf93188a17b2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

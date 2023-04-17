@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jwigr7l53ppa"
+path="res://.godot/imported/embarrassed.wav-596288c329364af7db25c5d13364d05e.sample"
+
+[deps]
+
+source_file="res://assets/audio effects retro/Extras/idk/embarrassed.wav"
+dest_files=["res://.godot/imported/embarrassed.wav-596288c329364af7db25c5d13364d05e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

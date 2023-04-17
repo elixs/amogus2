@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bkovwo737pmrl"
+path="res://.godot/imported/sing 3.wav-060b53d7fee67326638ea5460b28040c.sample"
+
+[deps]
+
+source_file="res://assets/audio effects retro/Extras/can use for music/sing 3.wav"
+dest_files=["res://.godot/imported/sing 3.wav-060b53d7fee67326638ea5460b28040c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

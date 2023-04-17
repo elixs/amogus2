@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cy6lg8s34143n"
+path="res://.godot/imported/little engine.wav-78e70d6b581e3c27778d21bf7ae8a58a.sample"
+
+[deps]
+
+source_file="res://assets/audio effects retro/Machines/menchanicals/little engine.wav"
+dest_files=["res://.godot/imported/little engine.wav-78e70d6b581e3c27778d21bf7ae8a58a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c16plcq7lu8o0"
+path="res://.godot/imported/Blade (need edit).wav-0264ad600b6fa7ea2f5dd36a0c573481.sample"
+
+[deps]
+
+source_file="res://assets/audio effects retro/Blade (need edit).wav"
+dest_files=["res://.godot/imported/Blade (need edit).wav-0264ad600b6fa7ea2f5dd36a0c573481.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

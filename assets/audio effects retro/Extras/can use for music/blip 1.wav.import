@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dy3xnufst68wa"
+path="res://.godot/imported/blip 1.wav-3f5b10b7006e62f9d9574bb3a48e6c71.sample"
+
+[deps]
+
+source_file="res://assets/audio effects retro/Extras/can use for music/blip 1.wav"
+dest_files=["res://.godot/imported/blip 1.wav-3f5b10b7006e62f9d9574bb3a48e6c71.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

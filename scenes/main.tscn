@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://do4rgljseuroc"]
+[gd_scene load_steps=14 format=3 uid="uid://do4rgljseuroc"]
 
 [ext_resource type="PackedScene" uid="uid://cj2eny6k3ufs6" path="res://scenes/player.tscn" id="2_k8b1r"]
 [ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="2_xaq8e"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qcr0020fw67i" path="res://scenes/follow_camera.tscn" id="3_mubxh"]
 [ext_resource type="Texture2D" uid="uid://bsoto5pswsr8b" path="res://assets/Tile Set/StaticTiles.png" id="5_iodlm"]
 [ext_resource type="Texture2D" uid="uid://bu83oflssdbl1" path="res://assets/37033d6e-0c40-44a3-857b-0192add29fc7.png" id="6_7tn55"]
+[ext_resource type="AudioStream" uid="uid://c8vxxhngph56d" path="res://assets/Wild West Music - Harvey Carman/MP3/Slinger Swagger (loop).mp3" id="7_uai0y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sf5i6"]
 texture = ExtResource("3_2meep")
@@ -470,6 +471,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(393217, 327680, 0, 393218, 327680, 0, 393216, 262144, 0, 393219, 327680, 0, 393220, 327680, 0, 393221, 327680, 0, 393222, 327680, 0, 393223, 327680, 0, 393224, 327680, 0, 393225, 327680, 0, 393226, 327680, 0, 393227, 393216, 0, 589839, 851968, 11, 524303, 851968, 10, 589838, 786432, 11, 524302, 786432, 10, 589837, 786432, 11, 524301, 786432, 10, 589836, 786432, 11, 524300, 786432, 10, 589835, 786432, 11, 524299, 786432, 10, 589834, 786432, 11, 524298, 786432, 10, 589833, 786432, 11, 524297, 786432, 10, 589832, 720896, 11, 524296, 720896, 10, 262153, 524288, 65538, 262155, 524288, 2)
 
 [node name="FollowCamera" parent="." instance=ExtResource("3_mubxh")]
+enabled = false
 
 [node name="Player" parent="." instance=ExtResource("2_k8b1r")]
 position = Vector2(57, 92)
@@ -483,3 +485,8 @@ layer_0/tile_data = PackedInt32Array(-131069, 65536, 9, -131068, 327680, 11, -19
 [node name="TileMap3" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_g8km6")
 format = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_uai0y")
+autoplay = true
+bus = &"Music"
