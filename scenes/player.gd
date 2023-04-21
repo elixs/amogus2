@@ -29,6 +29,11 @@ var Enemy = preload("res://scenes/enemy.tscn")
 
 @onready var hud = $CanvasLayer/HUD
 
+const MAX_JUMPS = 3
+var jumps = 0
+
+const MAX_JUMP_TIME = 1
+var jump_time = 0
 
 
 func _ready():
@@ -40,10 +45,20 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump") and jumps < MAX_JUMPS - 1:
 		Game.jumps += 1
 		audio_stream_player.play()
+		jumps += 1
+		jump_time = 0
+#		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_pressed("jump") and jump_time < MAX_JUMP_TIME:
+		velocity.y = JUMP_VELOCITY * (MAX_JUMP_TIME - jump_time)/MAX_JUMP_TIME
+	
+	jump_time += delta
+	
+	if is_on_floor():
+		jumps = 0
 	
 	var move_input = Input.get_axis("move_left", "move_right")
 	
