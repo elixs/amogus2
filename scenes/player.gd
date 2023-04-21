@@ -6,6 +6,14 @@ const JUMP_VELOCITY = -100.0
 const ACCELERATION = 1000
 const GRAVITY = 150
 
+const MAX_HEALTH = 100
+var health = 100:
+	set(value):
+		health = value
+		hud.set_health(health)
+	get:
+		return health
+
 var Enemy = preload("res://scenes/enemy.tscn")
 
 @onready var animation_player = $AnimationPlayer
@@ -18,6 +26,9 @@ var Enemy = preload("res://scenes/enemy.tscn")
 
 @onready var audio_stream_player = $AudioStreamPlayer
 @onready var area_2d = $Pivot/Area2D
+
+@onready var hud = $CanvasLayer/HUD
+
 
 
 func _ready():
@@ -85,3 +96,9 @@ func _on_body_entered(body: Node):
 	if body is CharacterBody2D:
 		var character = body as CharacterBody2D
 		character.velocity = (character.global_position - global_position).normalized() * 300
+
+
+func take_damage():
+	if health <= 0:
+		return
+	health = max(health - 25, 0)
