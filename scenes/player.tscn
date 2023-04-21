@@ -457,6 +457,7 @@ vframes = 8
 metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="Pivot"]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -464,6 +465,9 @@ collision_mask = 4
 position = Vector2(10.5, 0.25)
 shape = SubResource("RectangleShape2D_jivw5")
 disabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="Pivot"]
+target_position = Vector2(10, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_bwnwi")
@@ -489,7 +493,6 @@ visible = false
 [node name="Camera" type="Camera2D" parent="."]
 enabled = false
 process_callback = 0
-limit_left = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 

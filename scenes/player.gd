@@ -28,9 +28,14 @@ var Enemy = preload("res://scenes/enemy.tscn")
 @onready var area_2d = $Pivot/Area2D
 
 @onready var hud = $CanvasLayer/HUD
+@onready var ray_cast_2d = $Pivot/RayCast2D
+
 
 const MAX_JUMPS = 3
-var jumps = 0
+var jumps = 0:
+	set(value):
+		jumps = value
+		hud.set_jumps(jumps)
 
 const MAX_JUMP_TIME = 1
 var jump_time = 0
@@ -40,25 +45,33 @@ func _ready():
 	animation_tree.active = true
 	camera.enabled = true
 	area_2d.body_entered.connect(_on_body_entered)
+	jumps = jumps
 
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 	
-	if Input.is_action_just_pressed("jump") and jumps < MAX_JUMPS - 1:
-		Game.jumps += 1
-		audio_stream_player.play()
-		jumps += 1
-		jump_time = 0
-#		velocity.y = JUMP_VELOCITY
+	if is_on_floor():
+		jumps = 0
+	
+	if Input.is_action_just_pressed("jump"):
+
+		if ray_cast_2d.is_colliding():
+			audio_stream_player.play()
+			jump_time = 0
+		elif jumps < MAX_JUMPS - 1:
+			Game.jumps += 1
+			jumps += 1
+			audio_stream_player.play()
+			jump_time = 0
+	#		velocity.y = JUMP_VELOCITY
 	
 	if Input.is_action_pressed("jump") and jump_time < MAX_JUMP_TIME:
 		velocity.y = JUMP_VELOCITY * (MAX_JUMP_TIME - jump_time)/MAX_JUMP_TIME
 	
 	jump_time += delta
 	
-	if is_on_floor():
-		jumps = 0
+
 	
 	var move_input = Input.get_axis("move_left", "move_right")
 	

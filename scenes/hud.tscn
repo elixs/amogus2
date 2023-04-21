@@ -16,3 +16,8 @@ layout_mode = 2
 size_flags_horizontal = 0
 value = 100.0
 show_percentage = false
+
+[node name="Jumps" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0

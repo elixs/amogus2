@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://do4rgljseuroc"]
+[gd_scene load_steps=16 format=3 uid="uid://do4rgljseuroc"]
 
 [ext_resource type="PackedScene" uid="uid://cj2eny6k3ufs6" path="res://scenes/player.tscn" id="2_k8b1r"]
 [ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="2_xaq8e"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bu83oflssdbl1" path="res://assets/37033d6e-0c40-44a3-857b-0192add29fc7.png" id="6_7tn55"]
 [ext_resource type="AudioStream" uid="uid://c8vxxhngph56d" path="res://assets/Wild West Music - Harvey Carman/MP3/Slinger Swagger (loop).mp3" id="7_uai0y"]
 [ext_resource type="PackedScene" uid="uid://ffr00ttrd3xx" path="res://scenes/spikes.tscn" id="8_duoqj"]
+[ext_resource type="PackedScene" uid="uid://ou2enlxh0b7f" path="res://scenes/box.tscn" id="9_yak18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sf5i6"]
 texture = ExtResource("3_2meep")
@@ -475,7 +476,7 @@ layer_0/tile_data = PackedInt32Array(393217, 327680, 0, 393218, 327680, 0, 39321
 enabled = false
 
 [node name="Player" parent="." instance=ExtResource("2_k8b1r")]
-position = Vector2(57, 92)
+position = Vector2(64, 41)
 
 [node name="TileMap2" type="TileMap" parent="."]
 visible = false
@@ -494,3 +495,7 @@ bus = &"Music"
 
 [node name="Spikes" parent="." instance=ExtResource("8_duoqj")]
 position = Vector2(24, 102)
+
+[node name="Box" parent="." instance=ExtResource("9_yak18")]
+position = Vector2(-11, 31)
+scale = Vector2(1, 5)
