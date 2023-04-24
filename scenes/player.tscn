@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cj2eny6k3ufs6"]
+[gd_scene load_steps=44 format=3 uid="uid://cj2eny6k3ufs6"]
 
 [ext_resource type="Texture2D" uid="uid://v40ljdvwi3xm" path="res://assets/mini cowboy-different 1.png" id="1_ndijd"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_xpfnj"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jivw5"]
 size = Vector2(17, 16.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3oo1"]
+size = Vector2(40, 10)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bwnwi"]
 radius = 2.0
@@ -443,7 +446,7 @@ graph_offset = Vector2(218, 81)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_xfeok"]
 
 [node name="Player" type="CharacterBody2D" groups=["camera"]]
-collision_layer = 3
+collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_xpfnj")
 
@@ -468,6 +471,14 @@ disabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="Pivot"]
 target_position = Vector2(10, 0)
+
+[node name="TalkArea" type="Area2D" parent="Pivot"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/TalkArea"]
+position = Vector2(20, 0)
+shape = SubResource("RectangleShape2D_l3oo1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_bwnwi")

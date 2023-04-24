@@ -30,6 +30,11 @@ var Enemy = preload("res://scenes/enemy.tscn")
 @onready var hud = $CanvasLayer/HUD
 @onready var ray_cast_2d = $Pivot/RayCast2D
 
+@onready var talk_area = $Pivot/TalkArea
+
+var talk_area_array = []
+
+
 
 const MAX_JUMPS = 3
 var jumps = 0:
@@ -46,6 +51,8 @@ func _ready():
 	camera.enabled = true
 	area_2d.body_entered.connect(_on_body_entered)
 	jumps = jumps
+	talk_area.body_entered.connect(_on_talk_entered)
+	talk_area.body_exited.connect(_on_talk_exited)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -84,6 +91,18 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("attack"):
 		_attack()
+		
+		
+	if Input.is_action_just_pressed("interact"):
+		if talk_area_array.size():
+			var closest = talk_area_array[0]
+			var closest_distance = abs(closest.global_position.x - global_position.x)
+			for body in talk_area_array:
+				var body_distance = abs(body.global_position.x - global_position.x)
+				if body_distance < closest_distance:
+					closest = body
+			if closest.has_method("talk"):
+				closest.talk()
 	
 	# animation
 	
@@ -130,3 +149,14 @@ func take_damage():
 	if health <= 0:
 		return
 	health = max(health - 25, 0)
+
+
+func _on_talk_entered(body: Node):
+	talk_area_array.append(body)
+	body.highlight = true
+
+
+func _on_talk_exited(body: Node):
+	if body in talk_area_array:
+		talk_area_array.erase(body)
+	body.highlight = false
