@@ -1,7 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://cj2eny6k3ufs6"]
+[gd_scene load_steps=45 format=3 uid="uid://cj2eny6k3ufs6"]
 
 [ext_resource type="Texture2D" uid="uid://v40ljdvwi3xm" path="res://assets/mini cowboy-different 1.png" id="1_ndijd"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_xpfnj"]
+[ext_resource type="PackedScene" uid="uid://cgt0cqx225hsv" path="res://scenes/player_bullet.tscn" id="2_rqdb6"]
 [ext_resource type="PackedScene" uid="uid://dn844xh8mytx3" path="res://ui/pause_menu.tscn" id="3_qiyis"]
 [ext_resource type="AudioStream" uid="uid://w05hsn4gg3ud" path="res://assets/audio effects retro/Animal and caracters/characters/actions and reactions interactions/jump.wav" id="4_vqcue"]
 [ext_resource type="PackedScene" uid="uid://cd1fewbqkh3br" path="res://scenes/hud.tscn" id="5_0t7pv"]
@@ -446,9 +447,10 @@ graph_offset = Vector2(218, 81)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_xfeok"]
 
 [node name="Player" type="CharacterBody2D" groups=["camera"]]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_xpfnj")
+Bullet = ExtResource("2_rqdb6")
 
 [node name="Pivot" type="Node2D" parent="."]
 
@@ -479,6 +481,9 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/TalkArea"]
 position = Vector2(20, 0)
 shape = SubResource("RectangleShape2D_l3oo1")
+
+[node name="BulletSpawn" type="Marker2D" parent="Pivot"]
+position = Vector2(6, -3.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_bwnwi")

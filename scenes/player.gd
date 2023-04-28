@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 
@@ -15,6 +16,7 @@ var health = 100:
 		return health
 
 var Enemy = preload("res://scenes/enemy.tscn")
+@export var Bullet : PackedScene
 
 @onready var animation_player = $AnimationPlayer
 @onready var animation_tree = $AnimationTree
@@ -31,6 +33,8 @@ var Enemy = preload("res://scenes/enemy.tscn")
 @onready var ray_cast_2d = $Pivot/RayCast2D
 
 @onready var talk_area = $Pivot/TalkArea
+@onready var bullet_spawn = $Pivot/BulletSpawn
+
 
 var talk_area_array = []
 
@@ -91,7 +95,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("attack"):
 		_attack()
-		
+	
+	if Input.is_action_just_pressed("fire"):
+		_fire()
 		
 	if Input.is_action_just_pressed("interact"):
 		if talk_area_array.size():
@@ -160,3 +166,13 @@ func _on_talk_exited(body: Node):
 	if body in talk_area_array:
 		talk_area_array.erase(body)
 	body.highlight = false
+
+
+func _fire():
+	if not Bullet:
+		return
+	var bullet = Bullet.instantiate()
+	add_sibling(bullet)
+	bullet.global_position = bullet_spawn.global_position
+	bullet.rotation = global_position.direction_to(get_global_mouse_position()).angle()
+	
