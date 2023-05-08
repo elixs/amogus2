@@ -38,6 +38,9 @@ var Enemy = preload("res://scenes/enemy.tscn")
 @onready var bullet_spawn = $Pivot/BulletSpawn
 @onready var sprite_2d = $Pivot/Sprite2D
 
+@onready var pickable_area = $PickableArea
+@onready var coin_label = $CoinLabel
+
 
 var talk_area_array = []
 
@@ -62,6 +65,8 @@ func _ready():
 	jumps = jumps
 	talk_area.body_entered.connect(_on_talk_entered)
 	talk_area.body_exited.connect(_on_talk_exited)
+	pickable_area.area_entered.connect(_on_area_entered)
+	_update_coins()
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -201,3 +206,15 @@ func _death():
 	await get_tree().create_timer(3).timeout
 	
 	get_tree().reload_current_scene()
+
+
+func _on_area_entered(area):
+	var coin = area as Coin
+	if coin:
+		coin.queue_free()
+		Game.coins += 1
+		_update_coins()
+
+
+func _update_coins():
+	coin_label.text = str(Game.coins)

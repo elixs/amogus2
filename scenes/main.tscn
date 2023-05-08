@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://do4rgljseuroc"]
+[gd_scene load_steps=18 format=3 uid="uid://do4rgljseuroc"]
 
 [ext_resource type="PackedScene" uid="uid://cj2eny6k3ufs6" path="res://scenes/player.tscn" id="2_k8b1r"]
 [ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="2_xaq8e"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ffr00ttrd3xx" path="res://scenes/spikes.tscn" id="8_duoqj"]
 [ext_resource type="PackedScene" uid="uid://ou2enlxh0b7f" path="res://scenes/box.tscn" id="9_yak18"]
 [ext_resource type="PackedScene" uid="uid://vtmtt0ti5xso" path="res://scenes/npc.tscn" id="10_wtecf"]
+[ext_resource type="PackedScene" uid="uid://duah7vark5a0s" path="res://scenes/coin.tscn" id="11_tmtrd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sf5i6"]
 texture = ExtResource("3_2meep")
@@ -464,7 +465,7 @@ sources/0 = SubResource("TileSetAtlasSource_ri538")
 
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(102, 46.5)
+position = Vector2(97, 10)
 scale = Vector2(8.71875, 4.86719)
 texture = ExtResource("2_xaq8e")
 
@@ -507,3 +508,12 @@ message = "· o ·)"
 
 [node name="Player" parent="." instance=ExtResource("2_k8b1r")]
 position = Vector2(64, 41)
+
+[node name="Coin" parent="." instance=ExtResource("11_tmtrd")]
+position = Vector2(141, 80)
+
+[node name="Coin2" parent="." instance=ExtResource("11_tmtrd")]
+position = Vector2(220, 83)
+
+[node name="Coin3" parent="." instance=ExtResource("11_tmtrd")]
+position = Vector2(280, 76)

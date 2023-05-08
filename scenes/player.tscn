@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cj2eny6k3ufs6"]
+[gd_scene load_steps=49 format=3 uid="uid://cj2eny6k3ufs6"]
 
 [ext_resource type="Texture2D" uid="uid://v40ljdvwi3xm" path="res://assets/mini cowboy-different 1.png" id="1_ndijd"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_xpfnj"]
@@ -471,6 +471,9 @@ graph_offset = Vector2(371, 1)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_xfeok"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2yvk"]
+radius = 36.0
+
 [node name="Player" type="CharacterBody2D" groups=["camera"]]
 collision_layer = 2
 collision_mask = 3
@@ -551,3 +554,17 @@ volume_db = -5.0
 bus = &"SFX"
 
 [node name="AttackPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="PickableArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickableArea"]
+shape = SubResource("CircleShape2D_o2yvk")
+
+[node name="CoinLabel" type="Label" parent="."]
+offset_left = -7.0
+offset_top = -26.0
+offset_right = 7.0
+offset_bottom = -8.0
+text = "99"
