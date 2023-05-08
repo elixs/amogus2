@@ -11,6 +11,8 @@ const MAX_HEALTH = 100
 var health = 100:
 	set(value):
 		health = value
+		if health == 0:
+			_death()
 		hud.set_health(health)
 	get:
 		return health
@@ -34,9 +36,12 @@ var Enemy = preload("res://scenes/enemy.tscn")
 
 @onready var talk_area = $Pivot/TalkArea
 @onready var bullet_spawn = $Pivot/BulletSpawn
+@onready var sprite_2d = $Pivot/Sprite2D
 
 
 var talk_area_array = []
+
+var can_move = true
 
 
 
@@ -65,7 +70,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		jumps = 0
 	
-	if Input.is_action_just_pressed("jump"):
+	if can_move and Input.is_action_just_pressed("jump"):
 
 		if ray_cast_2d.is_colliding():
 			audio_stream_player.play()
@@ -77,7 +82,7 @@ func _physics_process(delta):
 			jump_time = 0
 	#		velocity.y = JUMP_VELOCITY
 	
-	if Input.is_action_pressed("jump") and jump_time < MAX_JUMP_TIME:
+	if can_move and Input.is_action_pressed("jump") and jump_time < MAX_JUMP_TIME:
 		velocity.y = JUMP_VELOCITY * (MAX_JUMP_TIME - jump_time)/MAX_JUMP_TIME
 	
 	jump_time += delta
@@ -86,9 +91,15 @@ func _physics_process(delta):
 	
 	var move_input = Input.get_axis("move_left", "move_right")
 	
+	if not can_move:
+		move_input = 0
+	
 	velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
 	
 	move_and_slide()
+	
+	if not can_move:
+		return
 	
 	if Input.is_action_just_pressed("spawn"):
 		_spawn()
@@ -175,4 +186,18 @@ func _fire():
 	add_sibling(bullet)
 	bullet.global_position = bullet_spawn.global_position
 	bullet.rotation = global_position.direction_to(get_global_mouse_position()).angle()
+
+
+func _death():
+	can_move = false
+	playback.call_deferred("travel", "death")
 	
+	var tween = create_tween()
+	tween.tween_property(sprite_2d, "scale", Vector2.ONE * 1.5, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	tween.parallel()
+	tween.tween_property(sprite_2d, "position", Vector2.DOWN * 10, 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	tween.tween_property(sprite_2d, "modulate", Color(1, 1, 1, 0), 0.3)
+	
+	await get_tree().create_timer(3).timeout
+	
+	get_tree().reload_current_scene()

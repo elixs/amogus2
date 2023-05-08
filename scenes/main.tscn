@@ -476,9 +476,6 @@ layer_0/tile_data = PackedInt32Array(393217, 327680, 0, 393218, 327680, 0, 39321
 [node name="FollowCamera" parent="." instance=ExtResource("3_mubxh")]
 enabled = false
 
-[node name="Player" parent="." instance=ExtResource("2_k8b1r")]
-position = Vector2(64, 41)
-
 [node name="TileMap2" type="TileMap" parent="."]
 visible = false
 tile_set = SubResource("TileSet_hcxds")
@@ -507,3 +504,6 @@ position = Vector2(272, 97)
 [node name="NPC2" parent="." instance=ExtResource("10_wtecf")]
 position = Vector2(288, 97)
 message = "· o ·)"
+
+[node name="Player" parent="." instance=ExtResource("2_k8b1r")]
+position = Vector2(64, 41)
