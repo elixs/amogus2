@@ -17,6 +17,17 @@ var health = 100:
 	get:
 		return health
 
+var display_name = "meh":
+	set(value):
+		display_name = "meh" +  str(value)
+		print(display_name)
+
+var counter = 0:
+	set(value):
+		counter = value
+		display_name = str(randi() % 101)
+		hud.set_counter(counter)
+
 var Enemy = preload("res://scenes/enemy.tscn")
 @export var Bullet : PackedScene
 
@@ -46,8 +57,6 @@ var talk_area_array = []
 
 var can_move = true
 
-
-
 const MAX_JUMPS = 3
 var jumps = 0:
 	set(value):
@@ -67,6 +76,17 @@ func _ready():
 	talk_area.body_exited.connect(_on_talk_exited)
 	pickable_area.area_entered.connect(_on_area_entered)
 	_update_coins()
+
+
+func _input(event):
+	if event.is_action_pressed("test"):
+		counter += 1
+	if event.is_action_pressed("save"):
+#		save_data()
+		save_config()
+	if event.is_action_pressed("load"):
+#		load_data()
+		load_config()
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -218,3 +238,41 @@ func _on_area_entered(area):
 
 func _update_coins():
 	coin_label.text = str(Game.coins)
+
+
+func save_data():
+	var data = {
+		"counter": counter
+	}
+#	var file = FileAccess.open("user://data.json", FileAccess.WRITE)
+#	var file = FileAccess.open_encrypted_with_pass("user://data.save", FileAccess.WRITE, "meh")
+	var file = FileAccess.open("user://data.binary", FileAccess.WRITE)
+
+#	file.store_string(JSON.stringify(data))
+	file.store_var(counter)
+	file.store_var(display_name)
+
+
+func load_data():	
+#	var file = FileAccess.open("user://data.json", FileAccess.READ)
+#	var file = FileAccess.open_encrypted_with_pass("user://data.save", FileAccess.READ, "meh")
+	var file = FileAccess.open("user://data.binary", FileAccess.READ)
+
+#	var data = JSON.parse_string(file.get_as_text())
+#	counter = data.counter
+
+	counter = file.get_var()
+	display_name = file.get_var()
+
+
+func save_config():
+	var config_file = ConfigFile.new()
+	config_file.set_value("settings", "language", Game.language)
+	config_file.save("user://config.cfg")
+
+
+func load_config():
+	var config_file = ConfigFile.new()
+	config_file.load("user://config.cfg")
+	var language = config_file.get_value("settings", "language")
+	print(language)

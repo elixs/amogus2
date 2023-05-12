@@ -8,3 +8,5 @@ var coins = 0
 var door_unlocked = false
 
 var inventory = []
+
+var language = "en"
