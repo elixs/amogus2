@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd3wshghtws0j"]
+
+[ext_resource type="Script" path="res://scenes/shooter/shooter.gd" id="1_7is55"]
+[ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="1_16167"]
+[ext_resource type="PackedScene" uid="uid://eonu3o830djl" path="res://scenes/shooter/player.tscn" id="1_xka0m"]
+[ext_resource type="PackedScene" uid="uid://b5g66u3lp3egi" path="res://scenes/shooter/spawner.tscn" id="4_vogia"]
+
+[node name="Shooter" type="Node2D"]
+script = ExtResource("1_7is55")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(86, 107)
+scale = Vector2(10, 10)
+texture = ExtResource("1_16167")
+
+[node name="Player" parent="." instance=ExtResource("1_xka0m")]
+position = Vector2(117, 58)
+
+[node name="Spawner" parent="Player" instance=ExtResource("4_vogia")]
+
+[node name="Enemies" type="Node2D" parent="."]
