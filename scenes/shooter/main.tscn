@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd3wshghtws0j"]
+
+[ext_resource type="Script" path="res://scenes/shooter/main.gd" id="1_mu1yo"]
+[ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="2_d15ac"]
+[ext_resource type="PackedScene" uid="uid://eonu3o830djl" path="res://scenes/shooter/player.tscn" id="3_7i3p6"]
+[ext_resource type="PackedScene" uid="uid://b5g66u3lp3egi" path="res://scenes/shooter/spawner.tscn" id="4_h27ja"]
+
+[node name="Shooter" type="Node2D"]
+script = ExtResource("1_mu1yo")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(86, 107)
+scale = Vector2(10, 10)
+texture = ExtResource("2_d15ac")
+
+[node name="Player" parent="." instance=ExtResource("3_7i3p6")]
+position = Vector2(117, 58)
+
+[node name="Spawner" parent="Player" instance=ExtResource("4_h27ja")]
+
+[node name="Enemies" type="Node2D" parent="."]

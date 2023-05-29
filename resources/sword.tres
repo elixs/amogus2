@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://bm7wcl4ny5ppc"]
+
+[ext_resource type="Script" path="res://resources/weapon_data.gd" id="1_ip8s2"]
+[ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="2_tkkr7"]
+
+[resource]
+script = ExtResource("1_ip8s2")
+name = "Excalibur"
+attack = 1000
+level = 50
+texture = ExtResource("2_tkkr7")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://bagoo57mdltna"]
+
+[ext_resource type="Script" path="res://resources/weapon_data.gd" id="1_isi6n"]
+[ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="2_pjh6y"]
+
+[resource]
+script = ExtResource("1_isi6n")
+name = "test"
+attack = 0
+level = 100
+texture = ExtResource("2_pjh6y")

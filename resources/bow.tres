@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://d15yiusgor05w"]
+
+[ext_resource type="Script" path="res://resources/weapon_data.gd" id="1_d3jrt"]
+[ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="2_vite1"]
+
+[resource]
+script = ExtResource("1_d3jrt")
+name = "Boko"
+attack = 4
+level = 1
+texture = ExtResource("2_vite1")

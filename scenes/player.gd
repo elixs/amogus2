@@ -31,6 +31,8 @@ var counter = 0:
 var Enemy = preload("res://scenes/enemy.tscn")
 @export var Bullet : PackedScene
 
+@export var weapon: WeaponData
+
 @onready var animation_player = $AnimationPlayer
 @onready var animation_tree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
@@ -87,6 +89,13 @@ func _input(event):
 	if event.is_action_pressed("load"):
 #		load_data()
 		load_config()
+	if event.is_action_pressed("resource"):
+		var weapon = WeaponData.new()
+		weapon.name = "test"
+		weapon.attack = 0
+		weapon.level = 100
+		ResourceSaver.save(weapon, "res://resources/test.tres")
+		
 
 func _physics_process(delta):
 	if not is_on_floor():

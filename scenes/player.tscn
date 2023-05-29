@@ -1,9 +1,10 @@
-[gd_scene load_steps=49 format=3 uid="uid://cj2eny6k3ufs6"]
+[gd_scene load_steps=50 format=3 uid="uid://cj2eny6k3ufs6"]
 
 [ext_resource type="Texture2D" uid="uid://v40ljdvwi3xm" path="res://assets/mini cowboy-different 1.png" id="1_ndijd"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_xpfnj"]
 [ext_resource type="PackedScene" uid="uid://cgt0cqx225hsv" path="res://scenes/player_bullet.tscn" id="2_rqdb6"]
 [ext_resource type="PackedScene" uid="uid://dn844xh8mytx3" path="res://ui/pause_menu.tscn" id="3_qiyis"]
+[ext_resource type="Resource" uid="uid://d3l64nf3hqm4i" path="res://resources/f.tres" id="3_y6p0i"]
 [ext_resource type="AudioStream" uid="uid://w05hsn4gg3ud" path="res://assets/audio effects retro/Animal and caracters/characters/actions and reactions interactions/jump.wav" id="4_vqcue"]
 [ext_resource type="PackedScene" uid="uid://cd1fewbqkh3br" path="res://scenes/hud.tscn" id="5_0t7pv"]
 [ext_resource type="AudioStream" uid="uid://ij1v7d66kcha" path="res://assets/audio effects retro/Animal and caracters/characters/actions and reactions interactions/attack/attack variation.wav" id="5_o3nfr"]
@@ -479,6 +480,7 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_xpfnj")
 Bullet = ExtResource("2_rqdb6")
+weapon = ExtResource("3_y6p0i")
 
 [node name="Pivot" type="Node2D" parent="."]
 
