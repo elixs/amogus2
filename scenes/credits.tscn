@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://bou5y3hra4bgq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqa3h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0sv1"]
+
+[sub_resource type="Theme" id="Theme_7jykj"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_cqa3h")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_v0sv1")
+
+[sub_resource type="Animation" id="Animation_cs3nj"]
+resource_name = "credits"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 0, 501]
+}
+
+[sub_resource type="Animation" id="Animation_abssg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6mc3"]
+_data = {
+"RESET": SubResource("Animation_abssg"),
+"credits": SubResource("Animation_cs3nj")
+}
+
+[node name="Credits" type="CanvasLayer"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_7jykj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center][shake]Title[/shake]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]jfoejrpgojrwoihjwpogqtweogrhijfdsa[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]m[color=#ff0000]e[/color]h[/shake][/center]
+[center][shake]End[/shake][/center]"
+fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "credits"
+libraries = {
+"": SubResource("AnimationLibrary_y6mc3")
+}
