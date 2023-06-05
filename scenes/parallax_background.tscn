@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://crw8d2v04cek1"]
+
+[ext_resource type="Texture2D" uid="uid://oj8baed0b5dy" path="res://assets/District/Backgound/clouds-with-background-2.png" id="1_nt0lp"]
+[ext_resource type="Texture2D" uid="uid://c4iixojiroei5" path="res://assets/District/Backgound/sheet-clouds.png" id="2_cyd7v"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Clouds-with-background-2" type="Sprite2D" parent="."]
+position = Vector2(103, 14)
+texture = ExtResource("1_nt0lp")
+region_enabled = true
+region_rect = Rect2(174.912, 0.881442, 108.647, 100.761)
+
+[node name="Sheet-clouds" type="Sprite2D" parent="."]
+position = Vector2(222, 21)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cyd7v")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 48)
+
+[node name="Sheet-clouds2" type="Sprite2D" parent="."]
+position = Vector2(71, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cyd7v")
+region_enabled = true
+region_rect = Rect2(0, 48, 128, 48)
+
+[node name="Sheet-clouds3" type="Sprite2D" parent="."]
+position = Vector2(86, 210)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cyd7v")
+region_enabled = true
+region_rect = Rect2(0, 96, 128, 48)
+
+[node name="Sheet-clouds4" type="Sprite2D" parent="."]
+position = Vector2(86, 313)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cyd7v")
+region_enabled = true
+region_rect = Rect2(0, 144, 128, 48)
+
+[node name="Sheet-clouds5" type="Sprite2D" parent="."]
+position = Vector2(80, 414)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cyd7v")
+region_enabled = true
+region_rect = Rect2(0, 208, 128, 16)

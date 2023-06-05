@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://7qj814oqkg1p"]
+
+[ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="1_istt5"]
+[ext_resource type="Script" path="res://scenes/navigation/player.gd" id="1_o7rwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrb0i"]
+size = Vector2(25.6, 25.6)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_o7rwx")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_istt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qrb0i")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+target_desired_distance = 5.0
+avoidance_enabled = true
+radius = 15.0
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true

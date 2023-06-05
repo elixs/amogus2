@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://do4rgljseuroc"]
+[gd_scene load_steps=17 format=3 uid="uid://do4rgljseuroc"]
 
 [ext_resource type="PackedScene" uid="uid://cj2eny6k3ufs6" path="res://scenes/player.tscn" id="2_k8b1r"]
-[ext_resource type="Texture2D" uid="uid://c0jm5ldrconit" path="res://icon.svg" id="2_xaq8e"]
 [ext_resource type="Texture2D" uid="uid://dj0gu461ct7mt" path="res://assets/District/Tiles/tileset-16px.png" id="3_2meep"]
 [ext_resource type="PackedScene" uid="uid://qcr0020fw67i" path="res://scenes/follow_camera.tscn" id="3_mubxh"]
 [ext_resource type="Texture2D" uid="uid://bsoto5pswsr8b" path="res://assets/Tile Set/StaticTiles.png" id="5_iodlm"]
@@ -462,12 +461,6 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ri538")
 
 [node name="Main" type="Node2D"]
-
-[node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(97, 10)
-scale = Vector2(8.71875, 4.86719)
-texture = ExtResource("2_xaq8e")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ervir")
