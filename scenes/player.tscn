@@ -536,9 +536,7 @@ visible = false
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("5_0t7pv")]
 
 [node name="Camera" type="Camera2D" parent="."]
-enabled = false
 process_callback = 0
-position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
 [node name="CameraZoom" type="Camera2D" parent="."]

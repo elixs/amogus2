@@ -1,49 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://crw8d2v04cek1"]
+[gd_scene load_steps=4 format=3 uid="uid://crw8d2v04cek1"]
 
+[ext_resource type="Script" path="res://scenes/parallax_background.gd" id="1_3euop"]
 [ext_resource type="Texture2D" uid="uid://oj8baed0b5dy" path="res://assets/District/Backgound/clouds-with-background-2.png" id="1_nt0lp"]
 [ext_resource type="Texture2D" uid="uid://c4iixojiroei5" path="res://assets/District/Backgound/sheet-clouds.png" id="2_cyd7v"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_3euop")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(256, 0)
 
-[node name="Clouds-with-background-2" type="Sprite2D" parent="."]
+[node name="Sheet-clouds5" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0.160784, 0.0941176, 0.0941176, 1)
+scale = Vector2(2, 10)
+texture = ExtResource("2_cyd7v")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 208, 128, 16)
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.01, 0.01)
+motion_mirroring = Vector2(256, 0)
+
+[node name="Clouds-with-background-2" type="Sprite2D" parent="ParallaxLayer6"]
 position = Vector2(103, 14)
 texture = ExtResource("1_nt0lp")
 region_enabled = true
 region_rect = Rect2(174.912, 0.881442, 108.647, 100.761)
 
-[node name="Sheet-clouds" type="Sprite2D" parent="."]
-position = Vector2(222, 21)
-scale = Vector2(2, 2)
-texture = ExtResource("2_cyd7v")
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 48)
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(256, 0)
 
-[node name="Sheet-clouds2" type="Sprite2D" parent="."]
-position = Vector2(71, 86)
+[node name="Sheet-clouds4" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(0, 48)
 scale = Vector2(2, 2)
 texture = ExtResource("2_cyd7v")
-region_enabled = true
-region_rect = Rect2(0, 48, 128, 48)
-
-[node name="Sheet-clouds3" type="Sprite2D" parent="."]
-position = Vector2(86, 210)
-scale = Vector2(2, 2)
-texture = ExtResource("2_cyd7v")
-region_enabled = true
-region_rect = Rect2(0, 96, 128, 48)
-
-[node name="Sheet-clouds4" type="Sprite2D" parent="."]
-position = Vector2(86, 313)
-scale = Vector2(2, 2)
-texture = ExtResource("2_cyd7v")
+centered = false
 region_enabled = true
 region_rect = Rect2(0, 144, 128, 48)
 
-[node name="Sheet-clouds5" type="Sprite2D" parent="."]
-position = Vector2(80, 414)
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(256, 0)
+
+[node name="Sheet-clouds3" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(0, 80)
 scale = Vector2(2, 2)
 texture = ExtResource("2_cyd7v")
+centered = false
 region_enabled = true
-region_rect = Rect2(0, 208, 128, 16)
+region_rect = Rect2(0, 96, 128, 48)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0)
+motion_mirroring = Vector2(256, 0)
+
+[node name="Sheet-clouds2" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(0, 84)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cyd7v")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 48, 128, 48)
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(256, 0)
+
+[node name="Sheet-clouds" type="Sprite2D" parent="ParallaxLayer5"]
+position = Vector2(0, 94)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cyd7v")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 48)

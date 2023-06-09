@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://do4rgljseuroc"]
+[gd_scene load_steps=18 format=3 uid="uid://do4rgljseuroc"]
 
 [ext_resource type="PackedScene" uid="uid://cj2eny6k3ufs6" path="res://scenes/player.tscn" id="2_k8b1r"]
 [ext_resource type="Texture2D" uid="uid://dj0gu461ct7mt" path="res://assets/District/Tiles/tileset-16px.png" id="3_2meep"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ffr00ttrd3xx" path="res://scenes/spikes.tscn" id="8_duoqj"]
 [ext_resource type="PackedScene" uid="uid://ou2enlxh0b7f" path="res://scenes/box.tscn" id="9_yak18"]
 [ext_resource type="PackedScene" uid="uid://vtmtt0ti5xso" path="res://scenes/npc.tscn" id="10_wtecf"]
+[ext_resource type="PackedScene" uid="uid://crw8d2v04cek1" path="res://scenes/parallax_background.tscn" id="11_tfeke"]
 [ext_resource type="PackedScene" uid="uid://duah7vark5a0s" path="res://scenes/coin.tscn" id="11_tmtrd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sf5i6"]
@@ -510,3 +511,5 @@ position = Vector2(220, 83)
 
 [node name="Coin3" parent="." instance=ExtResource("11_tmtrd")]
 position = Vector2(280, 76)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("11_tfeke")]

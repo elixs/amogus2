@@ -23,7 +23,7 @@ func _on_resume_pressed():
 
 
 func _on_retry_pressed():
-	get_tree().reload_current_scene()
+	LevelManager.retry()
 	get_tree().paused = false
 
 
