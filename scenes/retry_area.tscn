@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk5x68btbtkgw"]
+
+[ext_resource type="Script" path="res://scenes/retry_area.gd" id="1_getis"]
+
+[node name="RetryArea" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_getis")

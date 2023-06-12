@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnmudyiy6b3nn"]
+
+[ext_resource type="Script" path="res://test/callable_test.gd" id="1_t2tvl"]
+[ext_resource type="Script" path="res://test/CallableChild.gd" id="2_4q45e"]
+
+[node name="CallableTest" type="Node2D"]
+script = ExtResource("1_t2tvl")
+
+[node name="CallableChild" type="Node2D" parent="."]
+script = ExtResource("2_4q45e")
